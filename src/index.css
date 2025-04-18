@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@keyframes spinOnce {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-spin-once {
+  animation-name: spinOnce;
+  animation-fill-mode: forwards;
+}
