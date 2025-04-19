@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import Intro from './pages/Intro'
 import Header from './component/Header'
 import TopBtn from './component/TopBtn'
+import Projects from './pages/projects'
+import Contact from './pages/contact'
 
 function Layout() {
   const location = useLocation()
@@ -19,8 +21,8 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/projects" element={<Home />} />
-        <Route path="/contact" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   )

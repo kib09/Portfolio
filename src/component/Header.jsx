@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <>
-      <header className="p-6 bg-neutral-600 text-white flex justify-between items-center fixed w-full z-50">
+      <header className="p-4 bg-neutral-600 text-white flex justify-between items-center fixed w-full z-50">
         {/* 로고 */}
         <h1 className="text-xl font-bold hover:text-yellow-400">
           <a href="/home">Inveloper</a>
@@ -22,6 +22,9 @@ function Header() {
             </a>
             <a href="/Projects" className="m-1 hover:text-yellow-400">
               Projects
+            </a>
+            <a href="/Contact" className="m-1 hover:text-yellow-400">
+              Contact
             </a>
           </div>
           {/* 햄버거 메뉴 */}
