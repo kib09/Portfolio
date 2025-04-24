@@ -1,12 +1,24 @@
-function ProjectCard({ title, description, link }) {
+function ProjectCard({ title, period, stack, description, role }) {
   return (
-    <div className="border p-4 rounded shadow-md hover:shadow-lg transition">
-      <h2 className="text-lg font-semibold">{title}</h2>
-      <p className="text-sm">{description}</p>
-      <a href={link} className="text-blue-500" target="_blank" rel="noreferrer">
-        View Project
-      </a>
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <h3 className="text-xl font-bold mb-1">{title}</h3>
+      <p className="text-sm text-gray-500 mb-2">{period}</p>
+      <div className="flex flex-wrap gap-2 mb-2">
+        {stack.map((item, idx) => (
+          <span
+            key={idx}
+            className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+      <p className="text-sm text-gray-800 mb-2">{description}</p>
+      <p className="text-sm text-gray-600">
+        <span className="font-semibold text-black">담당 역할:</span> {role}
+      </p>
     </div>
-  )
+  );
 }
-export default ProjectCard
+
+export default ProjectCard;
