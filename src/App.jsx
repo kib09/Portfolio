@@ -1,31 +1,32 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import Home from './pages/Home'
-import Intro from './pages/Intro'
-import Header from './component/Header'
-import TopBtn from './component/TopBtn'
-import Projects from './pages/projects'
-import Contact from './pages/contact'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import MouseFollower from "./component/MouseFollower";
+import Header from "./component/Header";
+import Home from "./pages/Home";
+import Intro from "./pages/Intro";
+import Projects from "./pages/projects";
+import About from "./pages/about";
 
 function Layout() {
-  const location = useLocation()
-  const showHeader = location.pathname !== '/'
+  const location = useLocation();
+  const showHeader = location.pathname !== "/";
 
   return (
     <>
-      {showHeader && (
-        <>
-          <Header />
-          <TopBtn />
-        </>
-      )}
+      <MouseFollower />
+      {showHeader && <Header />}
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
-  )
+  );
 }
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
     <Router>
       <Layout />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
