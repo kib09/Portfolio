@@ -13,11 +13,11 @@ function Home() {
 
         {/* 텍스트 정보 */}
         <div className="flex flex-col justify-center text-center md:text-left">
-          <div className="text-5xl md:text-7xl font-bold mb-4 border-b-yellow-500 border-b-4 pb-2">
+          <div className="relative text-5xl md:text-7xl font-bold mb-10 border-b-4">
             KIM IN BAE
-          </div>
-          <div className="text-2xl md:text-3xl mb-2">
-            WEB Frontend Developer
+            <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-5xl md:text-5xl text-yellow-200 opacity-20 pointer-events-none select-none">
+              FrontendDeveloper
+            </span>
           </div>
           <div className="text-lg">책임감 있게 성장하는 개발자</div>
         </div>

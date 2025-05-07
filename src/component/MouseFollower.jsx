@@ -37,7 +37,7 @@ function MouseFollower() {
       ref={followerRef}
       src={PawImage}
       alt="곰 발바닥"
-      className="w-8 h-8 fixed top-0 left-0 pointer-events-none z-[9999] select-none md:disable"
+      className="w-8 h-8 fixed top-0 left-0 pointer-events-none z-[9999] select-none"
     />
   );
 }

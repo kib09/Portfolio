@@ -70,7 +70,8 @@ function About() {
                 />
               }
               stack={"HTML"}
-            />
+            />{" "}
+            ewgbbhmnuj -= cxd
             <StackCard
               stackImg={
                 <img
