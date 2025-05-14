@@ -4,27 +4,45 @@ import FadeInItem from "../component/FadeInItem";
 
 function Home() {
   return (
-    <div className="bg-neutral-600 min-h-screen text-white  flex justify-center items-center">
-      <section className="flex flex-col md:flex-row py-20 px-4 gap-8 items-center">
+    <div className="bg-neutral-600 min-h-full text-white  flex justify-center items-center ">
+      <section className="flex flex-col md:flex-row px-4 gap-8 items-center pb-5 border-b-4 border-neutral-800">
         {/* 기울기 카드 */}
         <TiltCard image={bearsImg} />
 
         {/* 텍스트 정보 */}
 
         <div className="flex flex-col justify-center text-center md:text-left">
-          <div className="flex relative items-center justify-center h-full gap-2 mb-6 border-b-4 ">
-            {["KIM", "IN", "BAE"].map((text, i) => (
+          <div className="flex border-l-amber-300 border-l-4 items-baseline relative justify-center h-full gap-2 mb-5  ">
+            <p className="font-paper text-5xl">김인배</p>
+            {["(", "Kim", "In", "Bae", ")"].map((text, i) => (
               <>
                 <FadeInItem key={i} index={i}>
-                  <span className="text-5xl mb-4">{text}</span>
+                  <span className="text-3xl mb-4">{text}</span>
                 </FadeInItem>
-                <span className="absolute  top-0 left-0 -translate-y-1/2 text-2xl md:text-5xl text-yellow-200 opacity-20 pointer-events-none select-none">
-                  FrontendDeveloper
-                </span>
               </>
             ))}
           </div>
-          <div className="text-lg">책임감 있게 성장하는 개발자</div>
+          <div className=" text-3xl text-yellow-500 font-bold ">Contact</div>
+          <div className=" text-2xl text-white ml-4">
+            <div className="flex gap-4">
+              Email
+              <button className="underline cursor-pointer text-neutral-300">
+                dslqoehf@gmail.com
+              </button>
+            </div>
+            <div className="flex gap-4">
+              GitHub
+              <button className="underline cursor-pointer text-neutral-300">
+                https://github.com/kib09
+              </button>
+            </div>
+            <div className="flex gap-4">
+              Blog
+              <button className="underline cursor-pointer text-neutral-300">
+                https://github.com/kib09
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
