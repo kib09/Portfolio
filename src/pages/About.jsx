@@ -3,7 +3,7 @@ import StackCard from "../component/StackCard";
 
 function About() {
   return (
-    <div className="bg-neutral-600 min-h-screen text-white pt-10">
+    <div className="bg-neutral-600  text-white min-h-screen">
       {/* Hero */}
       <section className="py-20 px-4">
         <section className="flex items-center justify-center text-center  bg-gradient-to-b ">
@@ -71,7 +71,6 @@ function About() {
               }
               stack={"HTML"}
             />{" "}
-            ewgbbhmnuj -= cxd
             <StackCard
               stackImg={
                 <img
