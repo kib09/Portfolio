@@ -12,7 +12,7 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black text-white flex justify-between items-center px-8 py-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-neutral-600 text-white flex justify-between items-center px-8 py-4 z-50">
       {/* 좌측 로고 */}
       <h1
         onClick={() => scrollTo("home")}

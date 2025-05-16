@@ -1,18 +1,32 @@
+import { Typewriter } from "react-simple-typewriter";
 import BearImage from "../assets/bg-bears.png"; // 곰 이미지
 import StackCard from "../component/StackCard";
 
+function Hero() {
+  return (
+    <h3 className="text-3xl  text-white   text-center  whitespace-pre-line">
+      <Typewriter
+        words={["안녕하세요 : ) \n 곰같은 개발자 김인배입니다."]}
+        loop={0}
+        cursor
+        cursorStyle="|"
+        typeSpeed={100}
+        deleteSpeed={1}
+        delaySpeed={3000}
+      />
+    </h3>
+  );
+}
 function About() {
   return (
     <div className="bg-neutral-600  text-white min-h-screen">
       {/* Hero */}
       <section className="py-20 px-4">
+        <div className="h-20">
+          <Hero />
+        </div>
         <section className="flex items-center justify-center text-center  bg-gradient-to-b ">
-          <img src={BearImage} alt="곰같은 개발자" className="w-36 h-36 m-10" />
           <div className="flex flex-col">
-            <h1 className=" text-4xl mb-4">
-              안녕하세요!{" "}
-              <span className="font-bold">곰같은 개발자 김인배</span> 입니다.{" "}
-            </h1>
             <p className="text-lg mt-2 ">
               조용히, 하지만 책임감 있게. 꾸준함으로 성장하는 프론트엔드
               개발자입니다.
@@ -26,7 +40,7 @@ function About() {
             자기소개
           </h2>
           <p className="text-md leading-relaxed">
-            저는 매일 조금씩 꾸준히 실력을 쌓아가는 프론트엔드 개발자입니다.
+            저는
             <br />
             곰처럼 묵묵히 맡은 일을 성실히 해내며 팀에 안정감을 주는 개발자를
             지향합니다.
