@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef(null);
-  const colorRef = useRef(); // 🎯 색상 저장용
+  const colorRef = useRef();
   const points = useRef([]);
   const animationRef = useRef();
   const sizeRef = useRef({ width: 0, height: 0 });

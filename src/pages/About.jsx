@@ -6,7 +6,7 @@ import FadeInItem from "../component/FadeInItem";
 
 function Hero() {
   return (
-    <h3 className="text-3xl  text-white   text-center  whitespace-pre-line">
+    <h3 className="text-3xl  text-white   text-center  whitespace-pre-line ">
       <Typewriter
         words={["안녕하세요 : ) \n 곰같은 개발자 김인배입니다."]}
         loop={0}
@@ -48,10 +48,10 @@ function About() {
             </h2>
             <div className=" flex flex-col md:items-center md:flex-row">
               <p className="text-5xl font-bold ">김인배</p>
-              <div className="flex flex-row">
-                {["(", "Kim", "In", "Bae", ")"].map((text, i) => (
+              <div className="flex flex-row gap-2">
+                {["(", "In-Bae", "Kim", ")"].map((text, i) => (
                   <>
-                    <FadeInItem key={i} index={i} className="flex ">
+                    <FadeInItem key={i} index={i}>
                       <p className="text-3xl flex flex-row">{text}</p>
                     </FadeInItem>
                   </>

@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <>
-      <header className="text-white fixed top-0 left-0 w-full   flex justify-between items-center px-5 py-4 z-50">
+      <header className="text-white fixed top-0 left-0 w-full flex justify-between items-center px-5 py-4 z-50 ">
         {/* 로고 */}
         <h1
           onClick={() => scrollTo("about")}
@@ -49,7 +49,7 @@ function Header() {
         </nav>
 
         {/* 모바일 메뉴 버튼 */}
-        <div className="md:hidden ">
+        <div className="md:hidden max-h-7">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-yellow-400 focus:outline-none cursor-pointer"
