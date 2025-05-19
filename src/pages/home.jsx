@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 function Home() {
   return (
     <>
-      <div className="bg-neutral-600 min-h-full text-white flex flex-col justify-center items-center ">
+      <div className=" min-h-full text-white flex flex-col justify-center items-center ">
         <section className="flex flex-col md:flex-row px-4 gap-8 items-center pb-5 border-b-4 border-neutral-800">
           {/*  카드  */}
           <TiltCard image={bearsImg} />

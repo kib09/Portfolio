@@ -12,7 +12,7 @@ function Projects() {
   );
 
   return (
-    <div className=" py-30 px-6 bg-neutral-600 flex flex-col items-center">
+    <div className=" py-30 px-6  flex flex-col items-center">
       {/* 필터 버튼 */}
       <div className="mb-10 flex gap-4 ">
         {["all", "team", "personal"].map((type) => (
@@ -22,7 +22,7 @@ function Projects() {
             className={`px-4 py-2 rounded font-semibold transition cursor-pointer ${
               filter === type
                 ? "bg-yellow-400 text-black"
-                : "bg-neutral-700 text-white hover:bg-yellow-500"
+                : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
             }`}
           >
             {type === "team"

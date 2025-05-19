@@ -10,10 +10,10 @@ function Modal({ project, onClose }) {
 
       {/* 모달 본문 */}
       <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="bg-white p-6 rounded-lg w-full max-w-lg relative shadow-lg">
+        <div className="bg-white p-8 rounded-lg w-full max-w-lg relative shadow-lg">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-500 hover:text-black"
+            className="absolute top-4 right-4 text-gray-500 cursor-pointer hover:text-black"
           >
             ✕
           </button>

@@ -1,5 +1,6 @@
 import { label } from "framer-motion/client";
 import { useScroll } from "../context/ScrollProvider";
+import DarkModeToggle from "./DarkModeToggle";
 
 function Header() {
   const { activeSection, scrollTo } = useScroll();
@@ -8,21 +9,21 @@ function Header() {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-neutral-600 text-white flex justify-between items-center px-8 py-4 z-50">
+    <header className="text-white fixed top-0 left-0 w-full  flex justify-between items-center px-8 py-4 z-50 ">
       {/* 좌측 로고 */}
       <h1
         onClick={() => scrollTo("home")}
         className="text-xl font-bold cursor-pointer hover:text-yellow-400 transition"
       >
-        inveloper
+        Inveloper
       </h1>
 
       {/* 우측 메뉴 */}
       <nav className="flex gap-6">
+        <DarkModeToggle />
         {navItems.map((item) => (
           <button
             key={item.id}

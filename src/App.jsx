@@ -1,14 +1,15 @@
 import Header from "./component/Header";
 import ProjectsPage from "./pages/ProjectsPage";
 import { ScrollProvider } from "./context/ScrollProvider";
-import MouseFollower from "./component/MouseFollower";
+import AnimatedBackground from "./component/AnimatedBg";
 function App() {
   return (
     <>
-      <MouseFollower />
+      <AnimatedBackground />
+
       <ScrollProvider>
         <Header />
-        <ProjectsPage />
+        <ProjectsPage style={{ position: "relative", zIndex: 1 }} />
       </ScrollProvider>
     </>
   );

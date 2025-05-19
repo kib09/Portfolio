@@ -19,8 +19,9 @@ function Hero() {
 }
 function About() {
   return (
-    <div className="bg-neutral-600  text-white min-h-screen">
+    <div className=" text-white min-h-screen">
       {/* Hero */}
+
       <section className="py-20 px-4">
         <div className="h-20">
           <Hero />
