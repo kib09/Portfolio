@@ -1,29 +1,48 @@
 import { useScroll } from "../context/ScrollProvider";
 import About from "./About";
-import Home from "./Home";
-import Projects from "./projects";
+import Contact from "./Contact";
+import Projects from "./Projects";
+import Skills from "./Skills";
 
 function ProjectsPage() {
   const { sections } = useScroll();
 
   return (
-    <div className="relative flex-col ">
+    <div className="h-screen flex-col py-20 px-4">
       {/* about */}
-      <section id="about" ref={sections.about} className="h-screen  text-white">
+      <section
+        id="about"
+        ref={sections.about}
+        className="min-h-full  text-white "
+      >
         <About />
       </section>
 
-      {/* Home  */}
-      <section id="home" ref={sections.home} className="h-screen  text-white">
-        <Home />
+      {/* skills */}
+      <section
+        id="skills"
+        ref={sections.skills}
+        className="min-h-full text-white"
+      >
+        <Skills />
       </section>
+
       {/* projects */}
       <section
         id="projects"
         ref={sections.projects}
-        className="h-screen text-white"
+        className=" min-h-full text-white mb-10"
       >
         <Projects />
+      </section>
+
+      {/* Contact */}
+      <section
+        id="contact"
+        ref={sections.contact}
+        className="min-h-1/2 text-white "
+      >
+        <Contact />
       </section>
     </div>
   );

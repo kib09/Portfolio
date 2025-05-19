@@ -1,4 +1,3 @@
-import { img } from "framer-motion/client";
 import PookjayoLogo from "../assets/Pookjayo-logo.svg";
 import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";

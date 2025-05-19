@@ -1,17 +1,27 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef(null);
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  const colorRef = useRef(); // 🎯 색상 저장용
+  const points = useRef([]);
+  const animationRef = useRef();
+  const sizeRef = useRef({ width: 0, height: 0 });
+  const lastTimeRef = useRef(0);
 
+  // 다크모드 감지
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      const dark = document.documentElement.classList.contains("dark");
-      setIsDark(dark);
-    });
+    const updateDark = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      colorRef.current = isDark
+        ? { background: "#0e0e1a", point: "#ffffff88", line: "#ffffff22" }
+        : { background: "#f4f4f4", point: "#00000055", line: "#00000011" };
+    };
 
+    // 초기 적용
+    updateDark();
+
+    // class 변경 감지
+    const observer = new MutationObserver(updateDark);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
@@ -23,22 +33,14 @@ const AnimatedBackground = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-
-    let width, height;
-    let animationId;
     const POINTS = 60;
     const MAX_DIST = 140;
     const FPS = 60;
-    const points = [];
-
-    const COLORS = isDark
-      ? { background: "#0e0e1a", point: "#ffffff88", line: "#ffffff22" }
-      : { background: "#f4f4f4", point: "#00000055", line: "#00000011" };
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -47,30 +49,29 @@ const AnimatedBackground = () => {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
 
-      points.length = 0;
-      for (let i = 0; i < POINTS; i++) {
-        points.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-        });
-      }
+      sizeRef.current = { width, height };
+      points.current = Array.from({ length: POINTS }).map(() => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+      }));
     };
 
-    let lastTime = 0;
     const draw = (time) => {
-      if (time - lastTime < 1000 / FPS) {
-        animationId = requestAnimationFrame(draw);
+      const { width, height } = sizeRef.current;
+      if (time - lastTimeRef.current < 1000 / FPS) {
+        animationRef.current = requestAnimationFrame(draw);
         return;
       }
-      lastTime = time;
+      lastTimeRef.current = time;
 
-      ctx.fillStyle = COLORS.background;
+      const colors = colorRef.current;
+      ctx.fillStyle = colors.background;
       ctx.fillRect(0, 0, width, height);
 
-      for (let i = 0; i < POINTS; i++) {
-        const p1 = points[i];
+      for (let i = 0; i < points.current.length; i++) {
+        const p1 = points.current[i];
         p1.x += p1.vx;
         p1.y += p1.vy;
 
@@ -79,11 +80,11 @@ const AnimatedBackground = () => {
 
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = COLORS.point;
+        ctx.fillStyle = colors.point;
         ctx.fill();
 
-        for (let j = i + 1; j < POINTS; j++) {
-          const p2 = points[j];
+        for (let j = i + 1; j < points.current.length; j++) {
+          const p2 = points.current[j];
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -92,14 +93,14 @@ const AnimatedBackground = () => {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = COLORS.line;
+            ctx.strokeStyle = colors.line;
             ctx.lineWidth = 1 - dist / MAX_DIST;
             ctx.stroke();
           }
         }
       }
 
-      animationId = requestAnimationFrame(draw);
+      animationRef.current = requestAnimationFrame(draw);
     };
 
     resize();
@@ -107,10 +108,10 @@ const AnimatedBackground = () => {
     window.addEventListener("resize", resize);
 
     return () => {
-      cancelAnimationFrame(animationId);
+      cancelAnimationFrame(animationRef.current);
       window.removeEventListener("resize", resize);
     };
-  }, [isDark]); // 다크모드 변경되면 다시 재실행
+  }, []);
 
   return (
     <canvas

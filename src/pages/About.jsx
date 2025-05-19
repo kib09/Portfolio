@@ -21,10 +21,10 @@ function Hero() {
 }
 function About() {
   return (
-    <div className=" text-white min-h-screen">
+    <div className=" text-white min-h-pull">
       {/* Hero */}
 
-      <section className="py-20 px-4">
+      <section>
         <div className="h-25">
           <Hero />
         </div>
@@ -43,19 +43,25 @@ function About() {
             <img src={profile} alt="profile" />
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-500 pl-3 text-yellow-500">
+            <h2 className="text-3xl font-bold  border-l-4 border-yellow-500 pl-3 text-yellow-500">
               About me
             </h2>
-
-            <p className="text-5xl ">김인배</p>
-            {["(", "Kim", "In", "Bae", ")"].map((text, i) => (
-              <>
-                <FadeInItem key={i} index={i}>
-                  <p className="text-3xl flex flex-row">{text}</p>
-                </FadeInItem>
-              </>
-            ))}
-
+            <div className=" flex flex-col md:items-center md:flex-row">
+              <p className="text-5xl font-bold ">김인배</p>
+              <div className="flex flex-row">
+                {["(", "Kim", "In", "Bae", ")"].map((text, i) => (
+                  <>
+                    <FadeInItem key={i} index={i} className="flex ">
+                      <p className="text-3xl flex flex-row">{text}</p>
+                    </FadeInItem>
+                  </>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p>1999.06.15</p>
+              <p>경기도 성남시 </p>
+            </div>
             {/* 곰같은 개발자 */}
             <div className="flex flex-col gap-4">
               <div className="text-2xl font-bold ">[곰같은 개발자]</div>
@@ -85,7 +91,6 @@ function About() {
                 개발에 임하고 있습니다.
               </p>
             </div>
-
             {/* 성장 지향 */}
             <div className="flex flex-col gap-4">
               <div className="text-2xl font-bold">
@@ -105,9 +110,9 @@ function About() {
         </section>
 
         {/* 기술 스택 */}
-        <section className="py-16  max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 border-l-4 border-yellow-500 pl-3 text-yellow-500">
-            Skill
+        {/* <section className="py-16  max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold  border-l-4 border-yellow-500 pl-3 text-yellow-500 mb-4">
+            Skills
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
             <StackCard
@@ -176,7 +181,7 @@ function About() {
               stack={"Tailwind"}
             />
           </div>
-        </section>
+        </section> */}
       </section>
     </div>
   );

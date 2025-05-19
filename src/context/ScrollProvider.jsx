@@ -10,6 +10,7 @@ export function ScrollProvider({ children }) {
   const sections = {
     home: useRef(null),
     about: useRef(null),
+    skills: useRef(null),
     projects: useRef(null),
     contact: useRef(null),
   };

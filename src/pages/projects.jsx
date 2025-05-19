@@ -12,45 +12,55 @@ function Projects() {
   );
 
   return (
-    <div className=" py-30 px-6  flex flex-col items-center">
-      {/* 필터 버튼 */}
-      <div className="mb-10 flex gap-4 ">
-        {["all", "team", "personal"].map((type) => (
-          <button
-            key={type}
-            onClick={() => setFilter(type)}
-            className={`px-4 py-2 rounded font-semibold transition cursor-pointer ${
-              filter === type
-                ? "bg-yellow-400 text-black"
-                : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
-            }`}
-          >
-            {type === "team"
-              ? "팀 프로젝트"
-              : type === "personal"
-              ? "개인 프로젝트"
-              : "전체 프로젝트"}
-          </button>
-        ))}
-      </div>
+    <section className=" max-w-4xl mx-auto">
+      <div className="flex flex-col  ">
+        <div className="md:flex gap-10 items-start">
+          <h2 className="text-3xl font-bold  border-l-4 border-yellow-500 pl-3 text-yellow-500 mb-4">
+            Projects
+          </h2>
 
-      {/* 카드 리스트 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
-        {filteredProjects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            {...project}
-            onClickDetail={() => setSelectedProject(project)}
-          />
-        ))}
+          {/* 필터 버튼 */}
+          <div className="flex flex-col md:flex-row justify-left">
+            <div className="flex gap-4 ">
+              {["all", "team", "personal"].map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setFilter(type)}
+                  className={`px-4 py-2 rounded font-semibold transition cursor-pointer ${
+                    filter === type
+                      ? "bg-yellow-400 text-black"
+                      : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
+                  }`}
+                >
+                  {type === "team"
+                    ? "팀 프로젝트"
+                    : type === "personal"
+                    ? "개인 프로젝트"
+                    : "전체 프로젝트"}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* 카드 리스트 */}
+        <div>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
+            {filteredProjects.map((project, i) => (
+              <ProjectCard
+                key={i}
+                {...project}
+                onClickDetail={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
+        </div>
+        {/* 모달 */}
+        <Modal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
-
-      {/* 모달 */}
-      <Modal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-    </div>
+    </section>
   );
 }
 
