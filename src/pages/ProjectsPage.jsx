@@ -1,13 +1,13 @@
 import { useScroll } from "../context/ScrollProvider";
-import About from "./about";
-import Home from "./home";
+import About from "./About";
+import Home from "./Home";
 import Projects from "./projects";
 
 function ProjectsPage() {
   const { sections } = useScroll();
 
   return (
-    <div className="relative">
+    <div className="relative flex-col ">
       {/* about */}
       <section id="about" ref={sections.about} className="h-screen  text-white">
         <About />

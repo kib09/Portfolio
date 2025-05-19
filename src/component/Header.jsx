@@ -6,16 +6,16 @@ function Header() {
   const { activeSection, scrollTo } = useScroll();
 
   const navItems = [
-    { id: "home", label: "Home" },
     { id: "about", label: "About" },
+    { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
   ];
 
   return (
-    <header className="text-white fixed top-0 left-0 w-full  flex justify-between items-center px-8 py-4 z-50 ">
+    <header className="text-white fixed top-0 left-0 w-full  flex justify-between items-center px-5 py-4 z-50 ">
       {/* 좌측 로고 */}
       <h1
-        onClick={() => scrollTo("home")}
+        onClick={() => scrollTo("about")}
         className="text-xl font-bold cursor-pointer hover:text-yellow-400 transition"
       >
         Inveloper

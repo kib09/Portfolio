@@ -1,6 +1,8 @@
 import { Typewriter } from "react-simple-typewriter";
 import BearImage from "../assets/bg-bears.png"; // 곰 이미지
 import StackCard from "../component/StackCard";
+import profile from "../assets/지브리mini.png";
+import FadeInItem from "../component/FadeInItem";
 
 function Hero() {
   return (
@@ -23,7 +25,7 @@ function About() {
       {/* Hero */}
 
       <section className="py-20 px-4">
-        <div className="h-20">
+        <div className="h-25">
           <Hero />
         </div>
         <section className="flex items-center justify-center text-center  bg-gradient-to-b ">
@@ -36,24 +38,76 @@ function About() {
         </section>
 
         {/* 소개 섹션 */}
-        <section className="py-16  max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-yellow-500 pl-3">
-            자기소개
-          </h2>
-          <p className="text-md leading-relaxed">
-            저는
-            <br />
-            곰처럼 묵묵히 맡은 일을 성실히 해내며 팀에 안정감을 주는 개발자를
-            지향합니다.
-            <br />
-            포기하지 않고 꾸준히 성장하며 도전하는 것이 저의 가장 큰 장점입니다.
-          </p>
+        <section className="flex flex-col justify-center py-16 max-w-4xl mx-auto gap-5 md:flex-row">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-yellow-500">
+            <img src={profile} alt="profile" />
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold mb-4 border-l-4 border-yellow-500 pl-3 text-yellow-500">
+              About me
+            </h2>
+
+            <p className="text-5xl ">김인배</p>
+            {["(", "Kim", "In", "Bae", ")"].map((text, i) => (
+              <>
+                <FadeInItem key={i} index={i}>
+                  <p className="text-3xl flex flex-row">{text}</p>
+                </FadeInItem>
+              </>
+            ))}
+
+            {/* 곰같은 개발자 */}
+            <div className="flex flex-col gap-4">
+              <div className="text-2xl font-bold ">[곰같은 개발자]</div>
+              <p className="ml-2">
+                겉으론 조용하지만, 맡은 바 책임은 누구보다 무겁게 받아들이는
+                스타일입니다.
+                <br />
+                꼼꼼하고 느긋하게, 그러나 절대 포기하지 않고{" "}
+                <span className="font-bold">
+                  끝까지 완성하는 끈기 있는 개발자
+                </span>
+                를 지향합니다.
+              </p>
+            </div>
+            {/* 사용자 경험 중심 */}
+            <div className="flex flex-col gap-4">
+              <div className="text-2xl font-bold">
+                [사용자의 경험을 고려하는 개발자]
+              </div>
+              <p className="ml-2">
+                CRM QA 업무를 직접 수행하며, 단순한 기능 구현을 넘어서{" "}
+                <br className="hidden md:block" />
+                사용자의 입장에서 어떻게 더 편리하고 직관적인 UI를 제공할 수
+                있을지를 고민하게 되었습니다.
+                <br />그 경험을 바탕으로 항상{" "}
+                <span className="font-bold">UX 우선의 사고방식</span>을 갖고
+                개발에 임하고 있습니다.
+              </p>
+            </div>
+
+            {/* 성장 지향 */}
+            <div className="flex flex-col gap-4">
+              <div className="text-2xl font-bold">
+                [성장의 즐거움을 아는 개발자]
+              </div>
+              <p className="ml-2">
+                매일 새로운 기술을 접하고 적용하는 것이 저에게는 도전이자
+                즐거움입니다.
+                <br />
+                배우는것에 대한 두려움이 없고 차근차근 배워 나가는것을 좋아하며
+                <br />
+                <span className="font-bold">꾸준히 기록하고 회고하는 습관</span>
+                을 가지고 있습니다.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* 기술 스택 */}
         <section className="py-16  max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-3">
-            기술 스택
+          <h2 className="text-2xl font-bold mb-8 border-l-4 border-yellow-500 pl-3 text-yellow-500">
+            Skill
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
             <StackCard
