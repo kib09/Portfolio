@@ -1,6 +1,4 @@
 import { Typewriter } from "react-simple-typewriter";
-import BearImage from "../assets/bg-bears.png"; // 곰 이미지
-import StackCard from "../component/StackCard";
 import profile from "../assets/지브리mini.png";
 import FadeInItem from "../component/FadeInItem";
 
@@ -21,7 +19,7 @@ function Hero() {
 }
 function About() {
   return (
-    <div className=" text-white min-h-pull">
+    <div className=" text-white min-h-pull pt-20">
       {/* Hero */}
 
       <section>

@@ -12,7 +12,7 @@ function Projects() {
   );
 
   return (
-    <section className=" max-w-4xl mx-auto">
+    <section className=" max-w-4xl mx-auto pt-20">
       <div className="flex flex-col  ">
         <div className="md:flex gap-10 items-start">
           <h2 className="text-3xl font-bold  border-l-4 border-yellow-500 pl-3 text-yellow-500 mb-4">
@@ -26,17 +26,32 @@ function Projects() {
                 <button
                   key={type}
                   onClick={() => setFilter(type)}
-                  className={`px-4 py-2 rounded font-semibold transition cursor-pointer ${
+                  className={`px-2 py-2 rounded font-semibold transition cursor-pointer text-center w-24 h-16 flex flex-col justify-center items-center ${
                     filter === type
                       ? "bg-yellow-400 text-black"
                       : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
                   }`}
                 >
-                  {type === "team"
-                    ? "팀 프로젝트"
-                    : type === "personal"
-                    ? "개인 프로젝트"
-                    : "전체 프로젝트"}
+                  <span className="leading-tight">
+                    {type === "team" && (
+                      <>
+                        <div>팀</div>
+                        <div>프로젝트</div>
+                      </>
+                    )}
+                    {type === "personal" && (
+                      <>
+                        <div>개인</div>
+                        <div>프로젝트</div>
+                      </>
+                    )}
+                    {type === "all" && (
+                      <>
+                        <div>전체</div>
+                        <div>프로젝트</div>
+                      </>
+                    )}
+                  </span>
                 </button>
               ))}
             </div>

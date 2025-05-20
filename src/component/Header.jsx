@@ -21,7 +21,10 @@ function Header() {
 
   return (
     <>
-      <header className="text-white fixed top-0 left-0 w-full flex justify-between items-center px-5 py-4 z-50 ">
+      <header
+        className="text-white fixed top-0 left-0 w-full h-15 flex justify-between items-center px-5 py-4 z-50
+   backdrop-blur-md "
+      >
         {/* 로고 */}
         <h1
           onClick={() => scrollTo("about")}
