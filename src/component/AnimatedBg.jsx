@@ -40,12 +40,12 @@ const AnimatedBackground = () => {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const width = window.innerWidth;
-      const height = window.innerHeight;
 
-      // 실제로 크기가 변경되지 않았다면 무시
-      const { width: oldW, height: oldH } = sizeRef.current;
-      if (width === oldW && height === oldH) return;
+      // 이전 width와 비교
+      const { width: oldWidth } = sizeRef.current;
+      if (width === oldWidth) return; // 높이 변경 무시
 
+      const height = window.innerHeight; // 현재 높이는 여전히 사용
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
