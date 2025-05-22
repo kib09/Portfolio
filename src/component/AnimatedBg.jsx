@@ -43,13 +43,11 @@ const AnimatedBackground = () => {
       const height = window.innerHeight;
 
       const { width: oldW, height: oldH } = sizeRef.current;
-
       const widthChanged = width !== oldW;
       const heightChanged = height !== oldH;
 
       if (!widthChanged && !heightChanged) return;
 
-      // 캔버스 사이즈만 재조정
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
@@ -57,11 +55,10 @@ const AnimatedBackground = () => {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
 
-      // 사이즈 갱신
       sizeRef.current = { width, height };
 
-      // 가로 크기가 변했을 경우에만 점 재생성
-      if (widthChanged) {
+      // 화면 회전 등으로 크기가 둘 다 바뀐 경우만 points 재생성
+      if (widthChanged && heightChanged) {
         points.current = Array.from({ length: POINTS }).map(() => ({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -143,8 +140,8 @@ const AnimatedBackground = () => {
         top: 0,
         left: 0,
         zIndex: -1,
-        width: "100%",
-        height: "100%",
+        width: "100vw",
+        height: "100vh", // 또는 JS로 설정하므로 style은 영향 적음
         display: "block",
         pointerEvents: "none", // ← 중요: 터치 이벤트 방지
         willChange: "transform", // ← GPU 가속 힌트
