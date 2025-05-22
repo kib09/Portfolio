@@ -1,6 +1,6 @@
 import { useScroll } from "../context/ScrollProvider";
 import About from "./About";
-import Contact from "../pages/Contact";
+import ContactPage from "./ContactPage";
 import Projects from "./Projects";
 import Skills from "./Skills";
 
@@ -42,7 +42,7 @@ function ProjectsPage() {
         ref={sections.contact}
         className="min-h-1/2 text-white "
       >
-        <Contact />
+        <ContactPage />
       </section>
     </div>
   );

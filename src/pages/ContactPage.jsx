@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Contact() {
+function ContactPage() {
   const [copied, setCopied] = useState("");
 
   const handleCopy = (text) => {
@@ -61,4 +61,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactPage;
