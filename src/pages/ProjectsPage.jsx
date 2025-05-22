@@ -1,6 +1,6 @@
 import { useScroll } from "../context/ScrollProvider";
 import About from "./About";
-import Contact from "./Contact.jsx";
+import Contact from "../pages/Contact";
 import Projects from "./Projects";
 import Skills from "./Skills";
 
