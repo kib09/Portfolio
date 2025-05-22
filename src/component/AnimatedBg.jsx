@@ -40,12 +40,16 @@ const AnimatedBackground = () => {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const width = window.innerWidth;
+      const height = window.innerHeight;
 
-      // 이전 width와 비교
-      const { width: oldWidth } = sizeRef.current;
-      if (width === oldWidth) return; // 높이 변경 무시
+      const { width: oldW, height: oldH } = sizeRef.current;
 
-      const height = window.innerHeight; // 현재 높이는 여전히 사용
+      const widthChanged = width !== oldW;
+      const heightChanged = height !== oldH;
+
+      if (!widthChanged && !heightChanged) return;
+
+      // 캔버스 사이즈만 재조정
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
@@ -53,14 +57,18 @@ const AnimatedBackground = () => {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
 
+      // 사이즈 갱신
       sizeRef.current = { width, height };
 
-      points.current = Array.from({ length: POINTS }).map(() => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-      }));
+      // 가로 크기가 변했을 경우에만 점 재생성
+      if (widthChanged) {
+        points.current = Array.from({ length: POINTS }).map(() => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+        }));
+      }
     };
 
     const draw = (time) => {
