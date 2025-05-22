@@ -36,9 +36,13 @@ function DarkModeToggle() {
   return (
     <button
       onClick={toggleTheme}
+      aria-label="Toggle dark mode"
       className="px-4 py-2 rounded bg-yellow-300 dark:bg-gray-800 text-black dark:text-white transition-all cursor-pointer"
     >
       {isDark ? "☀️" : " 🌙 "}
+      <span className="sr-only">
+        {isDark ? "라이트모드 버튼" : "다크모드 버튼"}
+      </span>
     </button>
   );
 }

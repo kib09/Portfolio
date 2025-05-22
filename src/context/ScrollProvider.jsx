@@ -25,7 +25,10 @@ export function ScrollProvider({ children }) {
           setActiveSection(visible.target.id);
         }
       },
-      { threshold: 0.5 }
+      {
+        threshold: 0.5,
+        rootMargin: "-70px 0px 0px 0px", // 상단 여백만큼 미리 감지
+      }
     );
 
     Object.values(sections).forEach((ref) => {
@@ -36,9 +39,19 @@ export function ScrollProvider({ children }) {
   }, []);
 
   const scrollTo = (section) => {
-    sections[section]?.current?.scrollIntoView({ behavior: "smooth" });
-  };
+    const element = sections[section]?.current;
+    if (!element) return;
 
+    const headerOffset = 70; // 헤더 높이
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
   return (
     <ScrollContext.Provider value={{ sections, activeSection, scrollTo }}>
       {children}
