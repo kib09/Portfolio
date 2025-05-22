@@ -17,7 +17,8 @@ function Hero() {
     </div>
   );
 }
-function About() {
+
+function AboutPage() {
   return (
     <div className=" text-white min-h-pull pt-20">
       {/* Hero */}
@@ -109,4 +110,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

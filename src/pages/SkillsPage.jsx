@@ -3,7 +3,7 @@ import StackCard from "../component/StackCard";
 import tailwind from "../assets/tailwind-ico.svg";
 import zustand from "../assets/zustand-ico.svg";
 
-function Skills() {
+function SkillsPage() {
   const [filter, setFilter] = useState("ALL");
 
   const stackList = [
@@ -144,4 +144,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default SkillsPage;

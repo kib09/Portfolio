@@ -1,7 +1,7 @@
 import Header from "./component/Header";
-import ProjectsPage from "./pages/ProjectsPage";
 import { ScrollProvider } from "./context/ScrollProvider";
 import AnimatedBackground from "./component/AnimatedBg";
+import MainPage from "./pages/MainPage";
 
 const savedTheme = localStorage.getItem("theme");
 
@@ -21,7 +21,7 @@ function App() {
 
       <ScrollProvider>
         <Header />
-        <ProjectsPage style={{ position: "relative", zIndex: 1 }} />
+        <MainPage style={{ position: "relative", zIndex: 1 }} />
       </ScrollProvider>
     </>
   );
