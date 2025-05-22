@@ -32,28 +32,26 @@ function ContactPage() {
 
           <div className="flex flex-col md:flex-row md:gap-4 mb-2 cursor-pointer">
             GitHub
-            <span
+            <a
+              href="https://github.com/kib09"
+              target="_blank"
               onClick={() => handleCopy("https://github.com/kib09")}
               className="text-2xl md:text-3xl underline font-bold text-neutral-600 dark:text-neutral-50"
             >
               https://github.com/kib09
-            </span>
-            {copied === "https://github.com/kib09" && (
-              <span className="text-green-400 ml-2">URL이 복사되었습니다!</span>
-            )}
+            </a>
           </div>
 
           <div className="text-2xl md:text-3xl flex flex-col md:flex-row md:gap-4 mb-2 cursor-pointer">
             Blog
-            <span
+            <a
+              href="https://blog.naver.com/inveloper"
+              target="_blank"
               onClick={() => handleCopy("https://github.com/kib09")}
               className="text-2xl md:text-3xl underline font-bold text-neutral-600 dark:text-neutral-50"
             >
-              https://github.com/kib09
-            </span>
-            {copied === "https://github.com/kib09" && (
-              <span className="text-green-400 ml-2">URL이 복사되었습니다!</span>
-            )}
+              https://blog.naver.com/inveloper
+            </a>
           </div>
         </div>
       </div>
