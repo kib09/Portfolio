@@ -21,7 +21,7 @@ function ContactPage() {
             Email
             <span
               onClick={() => handleCopy("dslqoehf@gmail.com")}
-              className="text-2xl md:text-3xl underline font-bold text-neutral-600 dark:text-neutral-50"
+              className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50"
             >
               dslqoehf@gmail.com
             </span>
@@ -36,7 +36,7 @@ function ContactPage() {
               href="https://github.com/kib09"
               target="_blank"
               onClick={() => handleCopy("https://github.com/kib09")}
-              className="text-2xl md:text-3xl underline font-bold text-neutral-600 dark:text-neutral-50"
+              className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50"
             >
               https://github.com/kib09
             </a>
@@ -48,7 +48,7 @@ function ContactPage() {
               href="https://blog.naver.com/inveloper"
               target="_blank"
               onClick={() => handleCopy("https://github.com/kib09")}
-              className="text-2xl md:text-3xl underline font-bold text-neutral-600 dark:text-neutral-50"
+              className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50"
             >
               https://blog.naver.com/inveloper
             </a>

@@ -56,8 +56,7 @@ function AboutPage() {
               </div>
             </div>
             <div>
-              <p>1999.06.15</p>
-              <p>경기도 성남시 </p>
+              <p>1999 .06 .15</p>
             </div>
             {/* 곰같은 개발자 */}
             <div className="flex flex-col gap-4">
