@@ -42,6 +42,10 @@ const AnimatedBackground = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
 
+      // 실제로 크기가 변경되지 않았다면 무시
+      const { width: oldW, height: oldH } = sizeRef.current;
+      if (width === oldW && height === oldH) return;
+
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
@@ -50,6 +54,7 @@ const AnimatedBackground = () => {
       ctx.scale(dpr, dpr);
 
       sizeRef.current = { width, height };
+
       points.current = Array.from({ length: POINTS }).map(() => ({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -103,6 +108,15 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
+    let resizeTimeout;
+    const debounceResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        resize();
+      }, 100); // 100ms 후 실행
+    };
+    window.addEventListener("resize", debounceResize);
+
     resize();
     draw();
     window.addEventListener("resize", resize);
@@ -121,9 +135,11 @@ const AnimatedBackground = () => {
         top: 0,
         left: 0,
         zIndex: -1,
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
         display: "block",
+        pointerEvents: "none", // ← 중요: 터치 이벤트 방지
+        willChange: "transform", // ← GPU 가속 힌트
       }}
     />
   );
