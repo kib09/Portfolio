@@ -28,6 +28,12 @@
   .text-white {
     @apply text-black dark:text-white;
   }
+  .text-yellow-900 {
+    @apply text-yellow-900 dark:text-yellow-500;
+  }
+  .border-yellow-900 {
+    @apply border-yellow-900 dark:border-yellow-500;
+  }
 }
 
 body {

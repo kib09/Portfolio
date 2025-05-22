@@ -28,7 +28,7 @@ function Header() {
         {/* 로고 */}
         <h1
           onClick={() => scrollTo("about")}
-          className="text-xl font-bold cursor-pointer hover:text-yellow-400 transition"
+          className="text-xl font-bold cursor-pointer hover:text-yellow-900 dark:hover:text-yellow-400 transition"
         >
           Inveloper
         </h1>
@@ -43,7 +43,7 @@ function Header() {
               className={`px-3 py-1 font-bold transition cursor-pointer ${
                 activeSection === item.id
                   ? "bg-yellow-400 text-black rounded"
-                  : "hover:text-yellow-300"
+                  : "hover:text-yellow-900"
               }`}
             >
               {item.label}
@@ -54,8 +54,9 @@ function Header() {
         {/* 모바일 메뉴 버튼 */}
         <div className="md:hidden max-h-7">
           <button
+            aria-label="menu open"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-yellow-400 focus:outline-none cursor-pointer"
+            className="text-yellow-900 focus:outline-none cursor-pointer"
           >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

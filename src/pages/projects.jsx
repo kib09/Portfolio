@@ -15,7 +15,7 @@ function Projects() {
     <section className=" max-w-4xl mx-auto pt-20">
       <div className="flex flex-col  ">
         <div className="md:flex gap-10 items-start">
-          <h2 className="text-3xl font-bold  border-l-4 border-yellow-500 pl-3 text-yellow-500 mb-4">
+          <h2 className="text-3xl font-bold  border-l-4 border-yellow-900 pl-3 text-yellow-900 mb-4">
             Projects
           </h2>
 
