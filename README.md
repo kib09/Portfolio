@@ -1,12 +1,63 @@
-# React + Vite
+# 🐻 김인배 | 프론트엔드 포트폴리오
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+곰같이 묵묵하지만 책임감 있게, 성장하고 있는 프론트엔드 개발자 **김인배**의 포트폴리오입니다.
 
-Currently, two official plugins are available:
+👉 **[배포 링크 바로가기](https://inverloper.vercel.app)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 주요 내용
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎯 사용자 경험(UX) 중심으로 구성된 반응형 SPA
+- 🌙 다크모드 지원 및 애니메이션 기반 인터랙션
+- 🧭 스크롤 기반 페이지 전환 + GNB 내비게이션
+- 📊 프로젝트 상세 모달, 기술 스택 강조, 접근성 반영
+
+---
+
+## 🛠️ 사용 기술
+
+| 구분            | 기술                                      |
+| --------------- | ----------------------------------------- |
+| 프레임워크      | React (Vite)                              |
+| UI 스타일링     | Tailwind CSS                              |
+| 라우팅 / 스크롤 | React Router, Scroll Context API          |
+| 애니메이션      | Framer Motion, Typewriter Effect , Swiper |
+| 배포            | Vercel                                    |
+| 접근성/SEO      | Lighthouse 기준 90점 이상, meta 설정 완료 |
+
+---
+
+## 📷 미리보기
+
+### 메인 페이지
+
+![main](./screenshots/main.png)
+
+### 다크모드
+
+![dark](./screenshots/dark.png)
+
+### 프로젝트 상세 보기
+
+![modal](./screenshots/modal.png)
+
+---
+
+## 📂 프로젝트 구조
+
+```bash
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── DarkModeToggle.jsx
+│   └── ...
+├── pages/
+│   ├── Home.jsx
+│   ├── ProjectsPage.jsx
+│   └── ...
+├── assets/
+├── context/
+│   └── ScrollProvider.jsx
+└── App.jsx
+```
