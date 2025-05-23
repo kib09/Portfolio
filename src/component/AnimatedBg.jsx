@@ -154,8 +154,8 @@ const AnimatedBackground = () => {
       setTimeout(() => {
         resizeCanvas();
         resizingRef.current = false;
-      }, 300);
-    }, 150);
+      }, 0);
+    }, 0);
 
     // 초기화
     setTimeout(() => {
