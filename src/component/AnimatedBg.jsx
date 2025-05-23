@@ -8,7 +8,6 @@ const AnimatedBackground = () => {
   const sizeRef = useRef({ width: 0, height: 0 });
   const lastTimeRef = useRef(0);
 
-  // Debounce function helper
   const debounce = (func, delay) => {
     let timeout;
     return function executedFunction(...args) {
@@ -79,7 +78,6 @@ const AnimatedBackground = () => {
       sizeRef.current = { width, height };
 
       if (widthChanged && heightChanged) {
-        // Reinitialize points only if both width and height have significantly changed
         points.current = Array.from({ length: POINTS }).map(() => ({
           x: Math.random() * width,
           y: Math.random() * height,
@@ -87,8 +85,6 @@ const AnimatedBackground = () => {
           vy: (Math.random() - 0.5) * 0.5,
         }));
       } else {
-        // If only one dimension changed (e.g., address bar hiding/showing),
-        // adjust existing points to stay within bounds without reinitializing
         points.current.forEach((p) => {
           if (p.x < 0) p.x = 0;
           if (p.x > width) p.x = width;
@@ -143,12 +139,10 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    // Debounce the resize handler with a delay (e.g., 200ms)
     const handleResize = debounce(() => {
       resize();
-    }, 200); // Adjust delay as needed
+    }, 400);
 
-    // Initial setup
     setTimeout(() => {
       resize();
       draw();
