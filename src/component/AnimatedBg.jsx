@@ -35,10 +35,16 @@ const AnimatedBackground = () => {
     const MAX_DIST = 140;
     const FPS = 60;
 
+    const getViewportSize = () => {
+      return {
+        width: window.innerWidth,
+        height: window.visualViewport?.height || window.innerHeight,
+      };
+    };
+
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      const width = window.innerWidth;
-      const height = window.visualViewport?.height || window.innerHeight;
+      const { width, height } = getViewportSize();
 
       const { width: oldW, height: oldH } = sizeRef.current;
       const widthChanged = width !== oldW;
@@ -110,13 +116,18 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    const handleResize = () => resize();
+    const handleResize = () => {
+      resize();
+    };
+
+    // 초기 렌더링: 1프레임 정도 딜레이 → 플리커 방지
+    setTimeout(() => {
+      resize();
+      draw();
+    }, 50);
 
     window.visualViewport?.addEventListener("resize", handleResize);
     window.addEventListener("resize", handleResize);
-
-    resize();
-    draw();
 
     return () => {
       cancelAnimationFrame(animationRef.current);
@@ -126,19 +137,32 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: -1,
-        width: "100vw",
-        display: "block",
-        pointerEvents: "none",
-        willChange: "transform",
-      }}
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          width: "100vw",
+          display: "block",
+          pointerEvents: "none",
+          willChange: "transform",
+        }}
+      />
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "#0e0e1a",
+          zIndex: -2,
+        }}
+      />
+    </>
   );
 };
 
