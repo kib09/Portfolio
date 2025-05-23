@@ -27,7 +27,7 @@ const AnimatedBackground = () => {
     const updateDark = () => {
       const isDark = document.documentElement.classList.contains("dark");
       colorRef.current = isDark
-        ? { background: "#0e0e1a", point: "#ffffff88", line: "#ffffff22" }
+        ? { background: "#0d0d18", point: "#ffffff88", line: "#ffffff22" }
         : { background: "#f4f4f4", point: "#00000055", line: "#00000011" };
     };
 
@@ -205,7 +205,7 @@ const AnimatedBackground = () => {
 
           zIndex: -2,
         }}
-        className="bg-[#f4f4f4] dark: bg-[#0e0e1a]"
+        className="bg-[#f4f4f4] dark:bg-[#0d0d18]"
       />
     </>
   );
