@@ -36,7 +36,9 @@ const AnimatedBackground = () => {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const width = window.innerWidth;
-      const height = window.innerHeight;
+
+      // 주소창을 제외한 실제 화면 높이 사용
+      const height = window.visualViewport?.height || window.innerHeight;
 
       const { width: oldW, height: oldH } = sizeRef.current;
       const widthChanged = width !== oldW;
@@ -135,7 +137,7 @@ const AnimatedBackground = () => {
         left: 0,
         zIndex: -1,
         width: "100vw",
-        height: "110%",
+        // height: "100vh", ← 사용 안함
         display: "block",
         pointerEvents: "none",
         willChange: "transform",
