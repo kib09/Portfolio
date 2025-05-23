@@ -53,10 +53,10 @@ const AnimatedBackground = () => {
     // 현재 뷰포트의 너비와 높이를 가져옵니다.
     // window.innerHeight를 사용하여 모바일 주소창 변화에 더 잘 대응합니다.
     const getViewportSize = () => {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight, // window.innerHeight를 직접 사용하여 실제 보이는 뷰포트 높이를 반영
-      };
+      const width = window.innerWidth;
+      const height =
+        window.visualViewport?.height || document.documentElement.clientHeight;
+      return { width, height };
     };
 
     // 캔버스 크기를 조정하고 점들을 재배치합니다.
@@ -163,10 +163,11 @@ const AnimatedBackground = () => {
     setTimeout(() => {
       resize();
       draw();
-    }, 100);
+    }, 300);
 
     // resize 이벤트 리스너 등록
     window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
     window.visualViewport?.addEventListener("resize", handleResize); // visualViewport도 함께 사용 (더 정확한 뷰포트 변화 감지)
 
     // 컴포넌트 언마운트 시 정리 (애니메이션 및 이벤트 리스너 해제)
@@ -186,10 +187,10 @@ const AnimatedBackground = () => {
         left: 0,
         zIndex: -1,
         width: "100vw", // 너비는 100vw 유지
-        // height: "100vh", // 이 부분을 제거하여 JavaScript에서 높이를 제어하도록 합니다.
         display: "block",
         pointerEvents: "none", // 마우스 이벤트를 무시하여 하위 요소 클릭 가능하게 함
         willChange: "transform", // 애니메이션 성능 최적화를 위한 힌트
+        backgroundColor: "transparent",
       }}
     />
   );
