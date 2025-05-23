@@ -8,6 +8,19 @@ const AnimatedBackground = () => {
   const sizeRef = useRef({ width: 0, height: 0 });
   const lastTimeRef = useRef(0);
 
+  // Debounce function helper
+  const debounce = (func, delay) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, delay);
+    };
+  };
+
   useEffect(() => {
     const updateDark = () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -66,12 +79,22 @@ const AnimatedBackground = () => {
       sizeRef.current = { width, height };
 
       if (widthChanged && heightChanged) {
+        // Reinitialize points only if both width and height have significantly changed
         points.current = Array.from({ length: POINTS }).map(() => ({
           x: Math.random() * width,
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.5,
           vy: (Math.random() - 0.5) * 0.5,
         }));
+      } else {
+        // If only one dimension changed (e.g., address bar hiding/showing),
+        // adjust existing points to stay within bounds without reinitializing
+        points.current.forEach((p) => {
+          if (p.x < 0) p.x = 0;
+          if (p.x > width) p.x = width;
+          if (p.y < 0) p.y = 0;
+          if (p.y > height) p.y = height;
+        });
       }
     };
 
@@ -120,15 +143,16 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    const handleResize = () => {
+    // Debounce the resize handler with a delay (e.g., 200ms)
+    const handleResize = debounce(() => {
       resize();
-    };
+    }, 200); // Adjust delay as needed
 
-    // 초기 진입 시 약간 딜레이 후 resize 호출 (주소창 사라지기 대기)
+    // Initial setup
     setTimeout(() => {
       resize();
       draw();
-    }, 100); // 너무 짧으면 flicker 생김
+    }, 100);
 
     window.addEventListener("resize", handleResize);
     window.visualViewport?.addEventListener("resize", handleResize);
