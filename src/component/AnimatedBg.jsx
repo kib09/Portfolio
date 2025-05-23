@@ -8,7 +8,6 @@ const AnimatedBackground = () => {
   const sizeRef = useRef({ width: 0, height: 0 });
   const lastTimeRef = useRef(0);
 
-  // 다크모드 감지
   useEffect(() => {
     const updateDark = () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -36,9 +35,14 @@ const AnimatedBackground = () => {
     const FPS = 60;
 
     const getViewportSize = () => {
+      const heightCandidates = [
+        window.innerHeight,
+        document.documentElement.clientHeight,
+        window.visualViewport?.height || 0,
+      ];
       return {
         width: window.innerWidth,
-        height: window.visualViewport?.height || window.innerHeight,
+        height: Math.max(...heightCandidates),
       };
     };
 
@@ -120,14 +124,14 @@ const AnimatedBackground = () => {
       resize();
     };
 
-    // 초기 렌더링: 1프레임 정도 딜레이 → 플리커 방지
+    // 초기 진입 시 약간 딜레이 후 resize 호출 (주소창 사라지기 대기)
     setTimeout(() => {
       resize();
       draw();
-    }, 50);
+    }, 100); // 너무 짧으면 flicker 생김
 
-    window.visualViewport?.addEventListener("resize", handleResize);
     window.addEventListener("resize", handleResize);
+    window.visualViewport?.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animationRef.current);
@@ -137,32 +141,20 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          width: "100vw",
-          display: "block",
-          pointerEvents: "none",
-          willChange: "transform",
-        }}
-      />
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "#0e0e1a",
-          zIndex: -2,
-        }}
-      />
-    </>
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        width: "100vw",
+        height: "100vh",
+        display: "block",
+        pointerEvents: "none",
+        willChange: "transform",
+      }}
+    />
   );
 };
 
