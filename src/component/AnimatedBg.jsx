@@ -8,7 +8,6 @@ const AnimatedBackground = () => {
   const sizeRef = useRef({ width: 0, height: 0 });
   const lastTimeRef = useRef(0);
 
-  // 다크모드 감지
   useEffect(() => {
     const updateDark = () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -17,10 +16,7 @@ const AnimatedBackground = () => {
         : { background: "#f4f4f4", point: "#00000055", line: "#00000011" };
     };
 
-    // 초기 적용
     updateDark();
-
-    // class 변경 감지
     const observer = new MutationObserver(updateDark);
     observer.observe(document.documentElement, {
       attributes: true,
@@ -57,7 +53,6 @@ const AnimatedBackground = () => {
 
       sizeRef.current = { width, height };
 
-      // 화면 회전 등으로 크기가 둘 다 바뀐 경우만 points 재생성
       if (widthChanged && heightChanged) {
         points.current = Array.from({ length: POINTS }).map(() => ({
           x: Math.random() * width,
@@ -118,17 +113,16 @@ const AnimatedBackground = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         resize();
-      }, 100); // 100ms 후 실행
+      }, 100);
     };
-    window.addEventListener("resize", debounceResize);
 
+    window.addEventListener("resize", debounceResize);
     resize();
     draw();
-    window.addEventListener("resize", resize);
 
     return () => {
       cancelAnimationFrame(animationRef.current);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", debounceResize);
     };
   }, []);
 
@@ -141,10 +135,9 @@ const AnimatedBackground = () => {
         left: 0,
         zIndex: -1,
         width: "100vw",
-        height: "100vh", // 또는 JS로 설정하므로 style은 영향 적음
         display: "block",
-        pointerEvents: "none", // ← 중요: 터치 이벤트 방지
-        willChange: "transform", // ← GPU 가속 힌트
+        pointerEvents: "none",
+        willChange: "transform",
       }}
     />
   );
