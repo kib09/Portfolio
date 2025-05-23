@@ -1,4 +1,12 @@
 @import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes spinOnce {
@@ -10,13 +18,6 @@
     transform: rotateX(0deg);
     opacity: 1;
   }
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
 }
 
 @theme {

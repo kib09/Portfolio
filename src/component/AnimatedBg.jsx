@@ -8,6 +8,7 @@ const AnimatedBackground = () => {
   const sizeRef = useRef({ width: 0, height: 0 });
   const lastTimeRef = useRef(0);
 
+  // 다크모드 감지
   useEffect(() => {
     const updateDark = () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -17,6 +18,7 @@ const AnimatedBackground = () => {
     };
 
     updateDark();
+
     const observer = new MutationObserver(updateDark);
     observer.observe(document.documentElement, {
       attributes: true,
@@ -36,8 +38,6 @@ const AnimatedBackground = () => {
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const width = window.innerWidth;
-
-      // 주소창을 제외한 실제 화면 높이 사용
       const height = window.visualViewport?.height || window.innerHeight;
 
       const { width: oldW, height: oldH } = sizeRef.current;
@@ -110,21 +110,18 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    let resizeTimeout;
-    const debounceResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        resize();
-      }, 100);
-    };
+    const handleResize = () => resize();
 
-    window.addEventListener("resize", debounceResize);
+    window.visualViewport?.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
+
     resize();
     draw();
 
     return () => {
       cancelAnimationFrame(animationRef.current);
-      window.removeEventListener("resize", debounceResize);
+      window.removeEventListener("resize", handleResize);
+      window.visualViewport?.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -137,7 +134,6 @@ const AnimatedBackground = () => {
         left: 0,
         zIndex: -1,
         width: "100vw",
-        // height: "100vh", ← 사용 안함
         display: "block",
         pointerEvents: "none",
         willChange: "transform",
