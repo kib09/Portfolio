@@ -135,6 +135,7 @@ const AnimatedBackground = () => {
         left: 0,
         zIndex: -1,
         width: "100vw",
+        height: "110vh",
         display: "block",
         pointerEvents: "none",
         willChange: "transform",
