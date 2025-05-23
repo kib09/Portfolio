@@ -149,13 +149,35 @@ const AnimatedBackground = () => {
       animationRef.current = requestAnimationFrame(draw);
     };
 
+    let scrolling = false;
+
+    const handleScroll = () => {
+      scrolling = true;
+      clearTimeout(handleScroll.timeout);
+      handleScroll.timeout = setTimeout(() => {
+        scrolling = false;
+        handleResize(); // 스크롤이 멈춘 뒤 리사이즈
+      }, 300);
+    };
+
+    window.visualViewport?.addEventListener("scroll", handleScroll);
+
     const handleResize = debounce(() => {
-      resizingRef.current = true;
-      setTimeout(() => {
-        resizeCanvas();
-        resizingRef.current = false;
-      }, 0);
-    }, 0);
+      const newSize = getViewportSize();
+      const { width, height } = sizeRef.current;
+
+      // 변동 폭이 클 경우에만 리사이징 수행
+      if (
+        Math.abs(newSize.width - width) > 10 ||
+        Math.abs(newSize.height - height) > 10
+      ) {
+        resizingRef.current = true;
+        setTimeout(() => {
+          resizeCanvas();
+          resizingRef.current = false;
+        }, 0);
+      }
+    }, 200); // 너무 잦은 트리거 방지
 
     // 초기화
     setTimeout(() => {

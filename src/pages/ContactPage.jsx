@@ -35,7 +35,6 @@ function ContactPage() {
             <a
               href="https://github.com/kib09"
               target="_blank"
-              onClick={() => handleCopy("https://github.com/kib09")}
               className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50"
             >
               https://github.com/kib09
@@ -47,7 +46,6 @@ function ContactPage() {
             <a
               href="https://blog.naver.com/inveloper"
               target="_blank"
-              onClick={() => handleCopy("https://github.com/kib09")}
               className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50"
             >
               https://blog.naver.com/inveloper
