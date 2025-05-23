@@ -16,7 +16,7 @@ const projects = [
       "/screenshots/pookjayo-1.png",
       "/screenshots/pookjayo-2.png",
     ],
-    github: "https://github.com/username/pookjayo",
+    github: "https://github.com/jadewisemann/Pookjayo",
     deploy: "https://pookjayo.vercel.app",
     short: "숙소 예약 앱",
     type: "team",
@@ -26,8 +26,8 @@ const projects = [
     period: "2023.11 ~ 2023.12",
     stack: ["JS", "OMDB", "DMDB", "SASS"],
     description:
-      "API를 활용한 영화 검색 웹앱으로 사용자가 원하는 영화 정보를 검색하고, 상세 정보를 확인할 수 있는 기능을 제공합니다.",
-    role: "API 연동, 상세 페이지 구현, SASS를 활용한 스타일링",
+      "omdbAPI, 오픈소스로 영화 정보를 제공하는 api를 이용하여 정보를 받아오고 해당 정보를 유저에게 제공하는 기능을 구현한 사이트.",
+    role: "공통 컴포넌트 제작 및 구현 , 검색 결과 페이지 개발 , API 연동으로 추가 검색 기능 개발, tmdb API 와 imdb API 사이 핸들링 기능 구현",
     image: VideOnLogo,
     images: [
       VideOnLogo,
@@ -35,6 +35,8 @@ const projects = [
       "/screenshots/pookjayo-2.png",
     ],
     short: "영화 검색 사이트",
+    github: "https://github.com/jadewisemann/est__team-2__project-2",
+    deploy: "https://est-team-2-project-2.vercel.app/",
     type: "team",
   },
   {
