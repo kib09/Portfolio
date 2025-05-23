@@ -13,8 +13,10 @@ const projects = [
     image: PookjayoLogo,
     images: [
       PookjayoLogo,
-      "/screenshots/pookjayo-1.png",
-      "/screenshots/pookjayo-2.png",
+      ...Array.from(
+        { length: 4 },
+        (_, i) => `/assets/POOKJAYO/pookjayo${i + 1}.PNG`
+      ),
     ],
     github: "https://github.com/jadewisemann/Pookjayo",
     deploy: "https://pookjayo.vercel.app",
@@ -31,8 +33,10 @@ const projects = [
     image: VideOnLogo,
     images: [
       VideOnLogo,
-      "/screenshots/pookjayo-1.png",
-      "/screenshots/pookjayo-2.png",
+      ...Array.from(
+        { length: 4 },
+        (_, i) => `/assets/VIDEON/videon${i + 1}.PNG`
+      ),
     ],
     short: "영화 검색 사이트",
     github: "https://github.com/jadewisemann/est__team-2__project-2",

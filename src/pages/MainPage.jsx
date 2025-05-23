@@ -1,3 +1,4 @@
+import FadeInItem from "../component/FadeInItem";
 import { useScroll } from "../context/ScrollProvider";
 import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
@@ -29,6 +30,7 @@ function MainPage() {
       </section>
 
       {/* projects */}
+
       <section
         id="projects"
         ref={sections.projects}

@@ -19,11 +19,11 @@ function Modal({ project, onClose }) {
 
   // 모달 포탈 방식
   return createPortal(
-    <div className="modal-active fixed inset-0 z-50">
+    <div className="modal-active fixed inset-0 z-50 ">
       <div className="absolute inset-0 bg-black/50 z-0" onClick={onClose}></div>
 
       <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg w-[90vw] max-w-lg relative shadow-lg h-[90vh] overflow-y-auto">
+        <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg w-[90vw] max-w-3xl relative shadow-lg h-[90vh] overflow-y-auto">
           <button
             aria-label="메뉴 열기"
             className="absolute top-3 right-3 text-2xl z-50 text-gray-500 cursor-pointer hover:text-black"
@@ -46,15 +46,17 @@ function Modal({ project, onClose }) {
               pagination={{ clickable: true }}
               touchRatio={1.5}
               grabCursor={true}
-              className="mb-4 rounded overflow-hidden"
+              className="mt-6 mb-4 rounded overflow-hidden"
             >
               {project.images.map((img, idx) => (
                 <SwiperSlide key={idx}>
-                  <img
-                    src={img}
-                    alt={`slide-${idx}`}
-                    className="w-full h-auto md:h-80 object-cover"
-                  />
+                  <div className="w-full aspect-[16/9] bg-gray-100">
+                    <img
+                      src={img}
+                      alt={`slide-${idx}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>

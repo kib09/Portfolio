@@ -20,14 +20,21 @@ export function ScrollProvider({ children }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          setActiveSection(visible.target.id);
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+        if (visibleEntries.length > 0) {
+          // 가장 위에 가까운 섹션을 선택
+          const topMost = visibleEntries.reduce((prev, current) =>
+            prev.boundingClientRect.top < current.boundingClientRect.top
+              ? prev
+              : current
+          );
+          setActiveSection(topMost.target.id);
         }
       },
       {
-        threshold: 0.5,
-        rootMargin: "-70px 0px 0px 0px", // 상단 여백만큼 미리 감지
+        threshold: 0.3,
+        rootMargin: "-100px 0px 0px 0px", // 감지 지점을 더 위로
       }
     );
 
@@ -42,7 +49,7 @@ export function ScrollProvider({ children }) {
     const element = sections[section]?.current;
     if (!element) return;
 
-    const headerOffset = 70; // 헤더 높이
+    const headerOffset = 70; // 헤더 높이만큼 보정
     const elementPosition =
       element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerOffset;
@@ -52,6 +59,7 @@ export function ScrollProvider({ children }) {
       behavior: "smooth",
     });
   };
+
   return (
     <ScrollContext.Provider value={{ sections, activeSection, scrollTo }}>
       {children}
