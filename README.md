@@ -2,7 +2,7 @@
 
 곰같이 묵묵하지만 책임감 있게, 성장하고 있는 프론트엔드 개발자 **김인배**의 포트폴리오입니다.
 
-👉 **[배포 링크 바로가기](https://inverloper.vercel.app)**
+👉 **[배포 링크 바로가기](https://inveloper.vercel.app)**
 
 ---
 
@@ -22,7 +22,7 @@
 | 프레임워크      | React (Vite)                              |
 | UI 스타일링     | Tailwind CSS                              |
 | 라우팅 / 스크롤 | React Router, Scroll Context API          |
-| 애니메이션      | Framer Motion, Typewriter Effect , Swiper |
+| 애니메이션      | Framer Motion, Fadeitem , Swiper          |
 | 배포            | Vercel                                    |
 | 접근성/SEO      | Lighthouse 기준 90점 이상, meta 설정 완료 |
 
@@ -53,7 +53,7 @@ src/
 │   ├── DarkModeToggle.jsx
 │   └── ...
 ├── pages/
-│   ├── Home.jsx
+│   ├── MainPage.jsx
 │   ├── ProjectsPage.jsx
 │   └── ...
 ├── assets/

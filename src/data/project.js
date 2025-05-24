@@ -1,7 +1,7 @@
 import PookjayoLogo from "../assets/Pookjayo-logo.svg";
 import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";
-
+import Profile from "../assets/지브리mini.jpg";
 const projects = [
   {
     title: "POOKJAYO",
@@ -20,7 +20,7 @@ const projects = [
     ],
     github: "https://github.com/jadewisemann/Pookjayo",
     deploy: "https://pookjayo.vercel.app",
-    short: "숙소 예약 앱",
+    short: "숙소 예약 사이트",
     type: "team",
   },
   {
@@ -56,6 +56,20 @@ const projects = [
     github: "https://github.com/jadewisemann/est__team2",
     deploy: "https://jadewisemann.github.io/est__team2/",
     type: "team",
+  },
+  {
+    title: "Portfolio ",
+    period: "2025.04~ 2025.05",
+    stack: ["react", "tailwind"],
+    description:
+      "react와 tailwind를 활용하여 제작한 포트폴리오 사이트입니다. 반응형 웹 디자인을 적용 하고 다크모드를 지원하여 ux를 개선하였습니다.",
+    role: "사이트 디자인 및 기능 구현",
+    image: Profile,
+    images: [Profile, "ss", "ss"],
+    short: "포트폴리오 사이트",
+    github: "https://github.com/kib09/portpolio",
+    deploy: "https://inveloper.vercel.app",
+    type: "personal",
   },
 ];
 
