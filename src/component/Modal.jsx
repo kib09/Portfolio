@@ -50,7 +50,7 @@ function Modal({ project, onClose }) {
             >
               {project.images.map((img, idx) => (
                 <SwiperSlide key={idx}>
-                  <div className="w-full aspect-[16/9] bg-gray-100">
+                  <div className="w-full aspect-[16/11] bg-gray-100">
                     <img
                       src={img}
                       alt={`slide-${idx}`}

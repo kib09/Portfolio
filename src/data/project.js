@@ -51,7 +51,10 @@ const projects = [
       "html, css를 활용한 피트니스 사이트입니다. 반응형 웹 디자인을 적용하여 다양한 화면 크기에서 최적화된 레이아웃을 제공합니다",
     role: "About 서브페이지 디자인 및 퍼블리싱",
     image: KroppLogo,
-    images: [KroppLogo, "ss", "ss"],
+    images: [
+      KroppLogo,
+      ...Array.from({ length: 4 }, (_, i) => `/assets/KROPP/kropp${i + 1}.PNG`),
+    ],
     short: "피트니스 사이트",
     github: "https://github.com/jadewisemann/est__team2",
     deploy: "https://jadewisemann.github.io/est__team2/",
@@ -65,7 +68,13 @@ const projects = [
       "react와 tailwind를 활용하여 제작한 포트폴리오 사이트입니다. 반응형 웹 디자인을 적용 하고 다크모드를 지원하여 ux를 개선하였습니다.",
     role: "사이트 디자인 및 기능 구현",
     image: Profile,
-    images: [Profile, "ss", "ss"],
+    images: [
+      Profile,
+      ...Array.from(
+        { length: 4 },
+        (_, i) => `/assets/PORTFOLIO/portfolio${i + 1}.PNG`
+      ),
+    ],
     short: "포트폴리오 사이트",
     github: "https://github.com/kib09/portpolio",
     deploy: "https://inveloper.vercel.app",
