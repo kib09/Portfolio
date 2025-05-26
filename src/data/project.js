@@ -2,14 +2,15 @@ import PookjayoLogo from "../assets/Pookjayo-logo.svg";
 import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";
 import Profile from "../assets/지브리mini.jpg";
+import pokedex from "../assets/Pokedex-logo.PNG";
 const projects = [
   {
     title: "POOKJAYO",
     period: "2025.03 ~ 2025.04",
     stack: ["React", "Firebase", "Tailwind"],
     description:
-      "숙소 검색, 예약, 사용자 로그인 기능을 갖춘 숙소 예약 웹앱입니다. Firebase Authentication을 활용한 사용자 인증과 Firestore 기반의 실시간 데이터베이스 기능을 구현하였으며, 반응형 UI를 위한 TailwindCSS를 적용하였습니다.",
-    role: "Firebase를 활용한 사용자 로그인/회원가입, 숙소 데이터 CRUD 처리 구현. UI 디자인과 TailwindCSS를 활용한 반응형 레이아웃 설계 및 적용.",
+      "숙소 검색, 예약, 사용자 로그인 기능을 갖춘 숙소 예약 웹앱입니다. 다크모드를 지원하여 ux를 개선하였습니다. Firebase Authentication을 활용한 사용자 인증과 Firestore 기반의 실시간 데이터베이스 기능을 구현하였으며, 반응형 UI를 위한 TailwindCSS를 적용하였습니다.",
+    role: "Component - input, toast, skeleton, heart, loading Page - login, signup, find-passwordProtect route 및 private route 구현 ,토스트 프로바이더 구현 인풋 검증 로직 구현",
     image: PookjayoLogo,
     images: [
       PookjayoLogo,
@@ -78,6 +79,26 @@ const projects = [
     short: "포트폴리오 사이트",
     github: "https://github.com/kib09/portpolio",
     deploy: "https://inveloper.vercel.app",
+    type: "personal",
+  },
+  {
+    title: "Pokedex",
+    period: "2025.05~ 2025.06",
+    stack: ["react", "styled-components", "fetch", "ts"],
+    description:
+      "react와 ts를 활용하여 제작한 포켓몬 도감 사이트입니다. styled-components를 사용하여 컴포넌트 기반의 스타일링을 적용하였으며, fetch API를 통해 포켓몬 데이터를 동적으로 불러옵니다.",
+    role: "사이트 디자인 및 기능 구현",
+    image: pokedex,
+    images: [
+      pokedex,
+      ...Array.from(
+        { length: 3 },
+        (_, i) => `/assets/POKEDEX/pokedex${i + 1}.PNG`
+      ),
+    ],
+    short: "포켓몬도감 사이트",
+    github: "https://github.com/kib09/pokedex",
+    deploy: "https://kib09.github.io/pokedex/",
     type: "personal",
   },
 ];

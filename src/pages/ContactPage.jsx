@@ -26,8 +26,7 @@ function ContactPage() {
 
         <FadeInItem index={2}>
           <div className="text-xl md:text-2xl text-white ml-4 md:flex-row md:gap-4 mb-2">
-            <div className="flex flex-col md:flex-row md:gap-4 mb-6 cursor-pointer">
-              Email
+            <div className="flex flex-col  md:gap-4 mb-6 cursor-pointer">
               <span
                 onClick={() => handleCopy("dslqoehf@gmail.com")}
                 className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50 hover:text-yellow-900 dark:hover:text-yellow-400"
