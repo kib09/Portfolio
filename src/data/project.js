@@ -2,7 +2,7 @@ import PookjayoLogo from "../assets/Pookjayo-logo.svg";
 import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";
 import Profile from "../assets/지브리mini.jpg";
-import pokedex from "../assets/Pokedex-logo.PNG";
+import PokedexLogo from "../assets/Pokedex-logo.PNG";
 const projects = [
   {
     title: "POOKJAYO",
@@ -88,9 +88,9 @@ const projects = [
     description:
       "react와 ts를 활용하여 제작한 포켓몬 도감 사이트입니다. styled-components를 사용하여 컴포넌트 기반의 스타일링을 적용하였으며, fetch API를 통해 포켓몬 데이터를 동적으로 불러옵니다.",
     role: "사이트 디자인 및 기능 구현",
-    image: pokedex,
+    image: PokedexLogo,
     images: [
-      pokedex,
+      PokedexLogo,
       ...Array.from(
         { length: 3 },
         (_, i) => `/assets/POKEDEX/pokedex${i + 1}.PNG`
