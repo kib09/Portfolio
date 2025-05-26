@@ -1,23 +1,23 @@
 // component/TopBtn.js
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 function TopBtn() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300)
-    }
+      setVisible(window.scrollY > 300);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  if (!visible) return null
+  if (!visible) return null;
 
   return (
     <button
@@ -27,7 +27,7 @@ function TopBtn() {
     >
       ↑{/* 또는 SVG 아이콘 */}
     </button>
-  )
+  );
 }
 
-export default TopBtn
+export default TopBtn;
