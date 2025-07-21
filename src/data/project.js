@@ -3,6 +3,7 @@ import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";
 import Profile from "../assets/지브리mini.jpg";
 import PokedexLogo from "../assets/Pokedex-logo.png";
+import ZakdangmoiLogo from "../assets/Zakdangmoi-logo.png";
 const projects = [
   {
     title: "POOKJAYO",
@@ -99,6 +100,33 @@ const projects = [
     short: "포켓몬 도감 사이트",
     github: "https://github.com/kib09/pokedex",
     deploy: "https://kib09.github.io/pokedex/",
+    type: "personal",
+  },
+  {
+    title: "Zakdangmoi",
+    period: "2025.05~ 2025.07",
+    stack: [
+      "react",
+      "styled-components",
+      "Tailwind",
+      "EmailJS",
+      "Zustand",
+      "Firebase",
+    ],
+    description:
+      "이 프로젝트는 React와 Vite, Firebase를 기반으로 한 일정, 공지, 메시지, 할 일 관리 웹 애플리케이션입니다. 관리자 및 일반 사용자가 로그인하여 공지사항, 일정, 연락처, 메시지, 할 일 등을 효율적으로 관리할 수 있습니다. 실제 서비스를 염두에 두고 설계되었으며 회원가입 기능을 제한하기 위해 관리자가 직접 email로 초대 하는 방식을 채택하였습니다.또한 실시간으로 변화하는 데이터를 반영하기 위해 Firebase realtime database를 사용하여 메시지 기능을 구현했습니다.",
+    role: "사이트 디자인 및 기능 구현 ",
+    image: ZakdangmoiLogo,
+    images: [
+      ZakdangmoiLogo,
+      ...Array.from(
+        { length: 8 },
+        (_, i) => `/assets/ZAKDANGMOI/zakdangmoi${i + 1}.PNG`
+      ),
+    ],
+    short: "소규모 그룹웨어 사이트",
+    github: "https://github.com/kib09/zakdangmoi",
+    deploy: "https://kibproject-63d04.web.app/",
     type: "personal",
   },
 ];

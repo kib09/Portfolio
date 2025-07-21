@@ -51,13 +51,13 @@ function ContactPage() {
             </div>
 
             <div className="text-2xl md:text-3xl flex flex-col md:flex-row md:gap-4 mb-6 cursor-pointer">
-              <a
+              {/* <a
                 href="https://blog.naver.com/inveloper"
                 target="_blank"
                 className="text-2xl md:text-3xl  font-bold text-neutral-600 dark:text-neutral-50 hover:text-yellow-900 dark:hover:text-yellow-400"
               >
                 BLOG 이동하기
-              </a>
+              </a> */}
             </div>
           </div>
         </FadeInItem>
