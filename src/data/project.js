@@ -3,7 +3,7 @@ import VideOnLogo from "../assets/VideOn-logo.svg";
 import KroppLogo from "../assets/Kropp-logo.svg";
 import Profile from "../assets/지브리mini.jpg";
 import PokedexLogo from "../assets/Pokedex-logo.png";
-import ZakdangmoiLogo from "../assets/Zakdangmoi-logo.png";
+import ZakdangmoiLogo from "../assets/Zakdang-logo.png";
 const projects = [
   {
     title: "POOKJAYO",
