@@ -42,8 +42,8 @@ function Header() {
               onClick={() => scrollTo(item.id)}
               className={`px-3 py-1 font-bold transition cursor-pointer ${
                 activeSection === item.id
-                  ? "bg-yellow-400 text-black rounded"
-                  : "hover:text-yellow-900"
+                  ? " bg-yellow-900 text-neutral-200 rounded"
+                  : "hover:text-yellow-900 dark:hover:text-yellow-400"
               }`}
             >
               {item.label}

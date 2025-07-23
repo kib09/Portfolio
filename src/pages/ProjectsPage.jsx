@@ -30,7 +30,7 @@ function ProjectsPage() {
                     onClick={() => setFilter(type)}
                     className={`px-2 py-2 rounded font-semibold transition cursor-pointer text-center w-24 h-16 flex flex-col justify-center items-center ${
                       filter === type
-                        ? "bg-yellow-400 text-black"
+                        ? "bg-yellow-900 text-neutral-200 "
                         : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
                     }`}
                   >

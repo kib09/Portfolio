@@ -35,6 +35,9 @@
   .border-yellow-900 {
     @apply border-yellow-900 dark:border-yellow-500;
   }
+  .bg-yellow-900 {
+    @apply bg-yellow-900 dark:bg-yellow-500;
+  }
 }
 
 body {
