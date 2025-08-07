@@ -4,6 +4,7 @@ import KroppLogo from "../assets/Kropp-logo.svg";
 import Profile from "../assets/지브리mini.jpg";
 import PokedexLogo from "../assets/Pokedex-logo.png";
 import ZakdangmoiLogo from "../assets/Zakdang-logo.png";
+import AlmanLogo from "../assets/Alman-logo.png";
 const projects = [
   {
     title: "POOKJAYO",
@@ -127,6 +128,33 @@ const projects = [
     short: "소규모 그룹웨어 사이트",
     github: "https://github.com/kib09/zakdangmoi",
     deploy: "https://kibproject-63d04.web.app/",
+    type: "personal",
+  },
+  {
+    title: "Alman",
+    period: "2025.01 ~ 2025.02",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    description:
+      "Next.js 15와 TypeScript를 기반으로 한 남성 쇼핑몰 웹사이트입니다. Prisma ORM을 사용한 데이터베이스 관리, 반응형 디자인, 다크모드 지원, 실시간 검색 기능을 구현하였습니다. 카테고리별 상품 분류, 장바구니 기능, 위시리스트, 사용자 인증 및 주문 관리 시스템을 포함한 완전한 이커머스 플랫폼입니다.",
+    role: "전체 사이트 설계 및 개발, 데이터베이스 스키마 설계, API 엔드포인트 구현, UI/UX 디자인 및 반응형 웹 구현",
+    image: AlmanLogo,
+    images: [
+      AlmanLogo,
+      ...Array.from(
+        { length: 10 },
+        (_, i) => `/assets/ALMAN/Alman${i + 1}.PNG`
+      ),
+    ],
+    short: "남성 쇼핑몰 사이트",
+    github: "https://github.com/kib09/alman",
+    deploy: "https://alman.vercel.app",
     type: "personal",
   },
 ];
