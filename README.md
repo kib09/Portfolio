@@ -28,6 +28,34 @@
 
 ---
 
+## 🚀 시작하기
+
+### 요구사항
+
+- **Node.js**: 20.0.0 이상 (LTS 버전 권장)
+- **npm** 또는 **yarn**
+
+### 설치 및 실행
+
+```bash
+# 저장소 클론
+git clone https://github.com/kib09/Portfolio-1.git
+cd Portfolio-1
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+
+# 빌드
+npm run build
+```
+
+**⚠️ 중요**: Vercel에서 Node.js 18 지원이 중단되었습니다. Node.js 20 이상 버전을 사용해주세요.
+
+---
+
 ## 📷 미리보기
 
 ### 메인 페이지
