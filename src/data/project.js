@@ -133,7 +133,7 @@ const projects = [
   },
   {
     title: "Alman",
-    period: "2025.01 ~ 2025.02",
+    period: "2025.07 ~ 2025.07",
     stack: [
       "Next.js",
       "TypeScript",
@@ -160,7 +160,7 @@ const projects = [
   },
   {
     title: "inluck",
-    period: "2025.02 ~ 2025.03",
+    period: "2025.07 ~ 2025.08",
     stack: [
       "React Native",
       "Expo",
