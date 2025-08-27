@@ -3,5 +3,23 @@
   <url>
     <loc>https://inveloper.vercel.app/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+  <!-- Favicon 및 아이콘 파일들 -->
+  <url>
+    <loc>https://inveloper.vercel.app/favicon.ico</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://inveloper.vercel.app/favicon/favicon-32x32.png</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://inveloper.vercel.app/favicon/android-icon-192x192.png</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

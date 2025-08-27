@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /favicon/
+Allow: /favicon.ico
+
+# Sitemap
 Sitemap: https://inveloper.vercel.app/sitemap.xml
+
+# Google 검색에서 로고 아이콘 표시를 위한 설정
+# favicon과 관련 이미지들에 대한 접근 허용
