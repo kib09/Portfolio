@@ -39,7 +39,7 @@ const projects = [
       VideOnLogo,
       ...Array.from(
         { length: 4 },
-        (_, i) => `/assets/VIDEON/videon${i + 1}.PNG`
+        (_, i) => `/assets/VIDEON/videon${i + 1}.png`
       ),
     ],
     short: "영화 검색 사이트",
