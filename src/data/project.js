@@ -5,6 +5,7 @@ import Profile from "../assets/지브리mini.jpg";
 import PokedexLogo from "../assets/Pokedex-logo.png";
 import ZakdangmoiLogo from "../assets/Zakdang-logo.png";
 import AlmanLogo from "../assets/Alman-logo.png";
+import InluckLogo from "../assets/inluck-logo.png";
 const projects = [
   {
     title: "POOKJAYO",
@@ -155,6 +156,32 @@ const projects = [
     short: "남성 쇼핑몰 사이트",
     github: "https://github.com/kib09/alman",
     deploy: "https://alman.vercel.app",
+    type: "personal",
+  },
+  {
+    title: "inluck",
+    period: "2025.02 ~ 2025.03",
+    stack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Google Gemini AI",
+      "Google OAuth",
+    ],
+    description:
+      "행운과 미래를 탐험할 수 있는 종합 운세 모바일 앱입니다. 로또 번호 추첨, 별자리별 운세, AI 기반 타로카드 리딩 등 다양한 기능을 통해 사용자에게 신비로운 경험을 제공합니다. React Native와 Expo를 사용하여 iOS와 Android 크로스 플랫폼을 지원하며, Google Gemini AI를 활용한 타로카드 해석과 Google OAuth를 통한 사용자 인증 시스템을 구현하였습니다.",
+    role: "전체 앱 설계 및 개발, AI 서비스 연동, OAuth 인증 시스템 구현, 크로스 플랫폼 UI/UX 디자인, 다크모드 지원",
+    image: InluckLogo,
+    images: [
+      InluckLogo,
+      ...Array.from(
+        { length: 9 },
+        (_, i) => `/assets/INLUCK/inluck${i + 1}.png`
+      ),
+    ],
+    short: "운세 및 타로카드 앱",
+    github: "https://github.com/kib09/inluck",
+    deploy: "https://expo.dev/accounts/kiminbae/projects/inluck",
     type: "personal",
   },
 ];
