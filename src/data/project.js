@@ -19,7 +19,7 @@ const projects = [
       PookjayoLogo,
       ...Array.from(
         { length: 4 },
-        (_, i) => `/assets/POOKJAYO/pookjayo${i + 1}.PNG`
+        (_, i) => `/assets/POOKJAYO/pookjayo${i + 1}.png`
       ),
     ],
     github: "https://github.com/jadewisemann/Pookjayo",
@@ -57,7 +57,7 @@ const projects = [
     image: KroppLogo,
     images: [
       KroppLogo,
-      ...Array.from({ length: 4 }, (_, i) => `/assets/KROPP/kropp${i + 1}.PNG`),
+      ...Array.from({ length: 4 }, (_, i) => `/assets/KROPP/kropp${i + 1}.png`),
     ],
     short: "피트니스 사이트",
     github: "https://github.com/jadewisemann/est__team2",
@@ -76,7 +76,7 @@ const projects = [
       Profile,
       ...Array.from(
         { length: 4 },
-        (_, i) => `/assets/PORTFOLIO/portfolio${i + 1}.PNG`
+        (_, i) => `/assets/PORTFOLIO/portfolio${i + 1}.png`
       ),
     ],
     short: "포트폴리오 사이트",
@@ -96,7 +96,7 @@ const projects = [
       PokedexLogo,
       ...Array.from(
         { length: 3 },
-        (_, i) => `/assets/POKEDEX/pokedex${i + 1}.PNG`
+        (_, i) => `/assets/POKEDEX/pokedex${i + 1}.png`
       ),
     ],
     short: "포켓몬 도감 사이트",
@@ -123,7 +123,7 @@ const projects = [
       ZakdangmoiLogo,
       ...Array.from(
         { length: 8 },
-        (_, i) => `/assets/ZAKDANGMOI/zakdangmoi${i + 1}.PNG`
+        (_, i) => `/assets/ZAKDANGMOI/zakdangmoi${i + 1}.png`
       ),
     ],
     short: "소규모 그룹웨어 사이트",
@@ -150,7 +150,7 @@ const projects = [
       AlmanLogo,
       ...Array.from(
         { length: 10 },
-        (_, i) => `/assets/ALMAN/Alman${i + 1}.PNG`
+        (_, i) => `/assets/ALMAN/Alman${i + 1}.png`
       ),
     ],
     short: "남성 쇼핑몰 사이트",
