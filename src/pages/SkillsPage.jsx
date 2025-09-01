@@ -121,20 +121,32 @@ function SkillsPage() {
                     item.img === "tailwind" ? (
                       <img
                         src={tailwind}
-                        alt={"tailwindcss"}
+                        alt="Tailwind CSS 로고"
                         className="w-12 h-12 mx-auto mb-2"
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                        decoding="async"
                       />
                     ) : item.img === "zustand" ? (
                       <img
                         src={zustand}
-                        alt={"zustand"}
+                        alt="Zustand 상태관리 라이브러리 로고"
                         className="w-12 h-12 mx-auto mb-2"
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                        decoding="async"
                       />
                     ) : (
                       <img
                         src={item.img}
-                        alt={item.stack}
+                        alt={`${item.stack} 기술 스택 로고`}
                         className="w-12 h-12 mx-auto mb-2"
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                        decoding="async"
                       />
                     )
                   }

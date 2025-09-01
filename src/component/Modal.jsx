@@ -53,8 +53,10 @@ function Modal({ project, onClose }) {
                   <div className="w-full aspect-[16/11] bg-gray-100">
                     <img
                       src={img}
-                      alt={`slide-${idx}`}
+                      alt={`${project.title} 프로젝트 스크린샷 ${idx + 1}`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </SwiperSlide>

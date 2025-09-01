@@ -73,6 +73,16 @@
 
     <!-- favicon end  -->
 
+    <!-- Critical Resource Preloading - Lighthouse 최적화 -->
+    <!-- 프로필 이미지 preload (AboutPage에서 즉시 사용) -->
+    <link rel="preload" as="image" href="/src/assets/지브리mini.jpg" type="image/jpeg" />
+    
+    <!-- 배경 이미지 preload -->
+    <link rel="preload" as="image" href="/src/assets/bg-bears.png" type="image/png" />
+    
+    <!-- 주요 로고들 preload -->
+    <link rel="preload" as="image" href="/src/assets/bears.svg" type="image/svg+xml" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>

@@ -5,7 +5,15 @@ function ProjectCard({ title, short, image, onClickDetail }) {
       onClick={onClickDetail}
     >
       <div className="overflow-hidden flex items-center justify-center">
-        <img src={image} alt={title} className="w-60 h-40 object-cover" />
+        <img 
+          src={image} 
+          alt={`${title} 프로젝트 이미지`} 
+          className="w-60 h-40 object-cover" 
+          width="240"
+          height="160"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <div className="p-4">

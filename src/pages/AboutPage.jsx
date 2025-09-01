@@ -39,7 +39,15 @@ function AboutPage() {
         {/* 소개 섹션 */}
         <div className="flex flex-col justify-center py-16 max-w-4xl mx-auto gap-5 md:flex-row">
           <div className="w-36 h-38 rounded-3xl overflow-hidden border-2 border-yellow-900 object-cover">
-            <img src={profile} alt="profile" />
+            <img 
+              src={profile} 
+              alt="김인배 프로필 사진 - 지브리 스타일의 개발자 초상화" 
+              width="144"
+              height="152"
+              className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
           </div>
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold  border-l-4 border-yellow-900 pl-3 text-yellow-900">
