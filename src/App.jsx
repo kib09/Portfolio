@@ -2,6 +2,7 @@ import Header from "./component/Header";
 import { ScrollProvider } from "./context/ScrollProvider";
 import AnimatedBackground from "./component/AnimatedBg";
 import MainPage from "./pages/MainPage";
+import { Analytics } from '@vercel/analytics/react';
 
 const savedTheme = localStorage.getItem("theme");
 
@@ -23,6 +24,9 @@ function App() {
         <Header />
         <MainPage style={{ position: "relative", zIndex: 1 }} />
       </ScrollProvider>
+      
+      {/* Vercel Analytics - 방문자 통계 수집 */}
+      <Analytics />
     </>
   );
 }
