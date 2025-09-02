@@ -84,7 +84,7 @@ function SkillsPage() {
     <section className="py-16 max-w-4xl mx-auto">
       <FadeInItem index={1}>
         <div className="md:flex gap-10 items-start">
-          <h2 className="text-3xl font-bold border-l-4 border-yellow-900 pl-3 text-yellow-900 mb-4">
+          <h2 className="text-3xl font-bold border-l-4 border-yellow-700 pl-3 text-yellow-7 00 mb-4">
             Skills
           </h2>
 
@@ -95,8 +95,8 @@ function SkillsPage() {
                 onClick={() => setFilter(type)}
                 className={`px-4 py-2 rounded font-semibold transition cursor-pointer mr-2 mb-2 ${
                   filter === type
-                    ? "bg-yellow-900 text-neutral-200"
-                    : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-500"
+                    ? "bg-yellow-900 text-neutral-200 "
+                        : "bg-neutral-200 dark:bg-neutral-700 text-white hover:bg-yellow-900 dark:hover:bg-yellow-500 hover:text-neutral-200 dark:hover:text-neutral-900"
                 }`}
               >
                 {type}
