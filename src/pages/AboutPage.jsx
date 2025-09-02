@@ -1,5 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
-import profile from "../assets/지브리mini.jpg";
+import profile from "../assets/지브리mini.webp";
 import FadeInItem from "../component/FadeInItem";
 
 function Hero() {
