@@ -84,7 +84,7 @@ function SkillsPage() {
     <section className="py-16 max-w-4xl mx-auto">
       <FadeInItem index={1}>
         <div className="md:flex gap-10 items-start">
-          <h2 className="text-3xl font-bold border-l-4 border-yellow-700 pl-3 text-yellow-7 00 mb-4">
+          <h2 className="text-3xl font-bold border-l-4 border-yellow-900 pl-3 text-yellow-900 00 mb-4">
             Skills
           </h2>
 
