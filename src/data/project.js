@@ -122,7 +122,7 @@ const projects = [
     images: [
       ZakdangmoiLogo,
       ...Array.from(
-        { length: 8 },
+        { length: 7 },
         (_, i) => `/assets/ZAKDANGMOI/zakdangmoi${i + 1}.png`
       ),
     ],
